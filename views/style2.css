@@ -1,0 +1,437 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+   
+
+}
+
+.container {
+    max-width: 1200px;
+    /* container screen define ko re di che oi jonno pora screen ju re aste ce nah  */
+    margin: auto;
+    margin-top:1px ;
+    background: #f2f4f8;
+}
+
+.row {
+    width: 100%;
+}
+
+.row::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+/*for mobile phone*/
+[class*="col-"] {
+    width: 100%;
+}
+
+/* header starts here  */
+header {
+    background: #24a19c;
+    padding: 0% 1%;
+    text-align: center;
+}
+
+
+nav ul li {
+    display: block;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    line-height: 70px;
+    padding: 0 20px;
+    transition: .4s;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul li a:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+        border: 2px solid white;
+}
+
+/* header ends here  */
+
+.card {
+    margin: 0 auto;
+    max-width:1000px ;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    font-size: 0;
+    /* font size 0 ko re di le by defult je space nicche ta ni be nah */
+}
+
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* footer starts here  */
+footer {
+    background:#24a19c;
+    padding: 1%;
+    color: white;
+    margin-bottom:1px ;
+}
+
+footer p {
+    font-size: 0.8rem;
+    line-height: 32px;
+    text-align: center;
+}
+
+.dotted-hr {
+    border: dotted 8px rgb(190, 184, 184);
+    border-bottom: none;
+    margin: 20px auto;
+    width: 120px;
+}
+
+
+
+
+/* footer ends here  */
+
+
+center {
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #555;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+}
+
+fieldset {
+    border: 2px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    width: 40%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none;
+    background-color: #339e38;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media (min-width: 576px) {
+
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+
+    /* Large screen column width */
+    .col-lg-1 {
+        width: 8.33%;
+    }
+
+    .col-lg-2 {
+        width: 16.66%;
+    }
+
+    .col-lg-3 {
+        width: 25%;
+    }
+
+    .col-lg-4 {
+        width: 33.33%;
+    }
+
+    .col-lg-5 {
+        width: 41.66%;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+    }
+
+    .col-lg-7 {
+        width: 58.33%;
+    }
+
+    .col-lg-8 {
+        width: 66.66%;
+    }
+
+    .col-lg-9 {
+        width: 75%;
+    }
+
+    .col-lg-10 {
+        width: 83.33%;
+    }
+
+    .col-lg-11 {
+        width: 91.66%;
+    }
+
+    .col-lg-12 {
+        width: 100%;
+    }
+
+    /* header starts here  */
+    .logo-div {
+        text-align: left;
+    }
+
+    nav ul {
+        text-align: right;
+    }
+
+    nav ul li {
+        display: inline-block;
+        /* lika golo ni che ni che cilo 
+              tai inline block dile pasapasi cho9le asbe */
+    }
+
+    nav ul li a {
+        display: inline-block;
+
+    }
+
+    nav ul li a:hover {
+        border-radius: 0;
+        background-color: transparent;
+        transform: scale(1.2);
+        text-decoration: underline;
+    }
+
+    /* header ends here  */
+
+    /* banner starts here  */
+    #banner-section {
+        position: relative;
+        height: 100vh;
+    }
+
+    .banner-contents {
+        position: absolute;
+        /* banner content er position ta tik kortechi oi jonno
+                         pos rel di e ekon absoulate ko re dichi */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .banner-contents h1 {
+        width: 700px;
+        font-size: 3.5rem;
+    }
+
+    .banner-contents p {
+        width: 500px;
+        font-size: 2rem;
+    }
+
+    /* banner ends here */
+
+    /* footer starts here  */
+  
+
+    /* footer ends here  */
+
+}
