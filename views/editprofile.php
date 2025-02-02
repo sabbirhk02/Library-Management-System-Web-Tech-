@@ -7,26 +7,64 @@ include_once("../controller/userData.php");
 <html>
 <head>  
     <title>edit profile</title>
-</head>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style10.css">
+    </head>
 
 <body>
+    <div class="container">
+        <!-- header starts  -->
+            <header class="header-check">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">                   
+                    <div class="logo-div">
+                            <a href="#">
+                                <img src="book.png"><!--logo add korar somoy logo ta ke hyper link er mnodde reke di bo  logo er class ta hobo ho fontweosome theke ni chi-->
+                            </a>
+                    </div>                 
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <p class="heading-style">Library Management System</p>
+                    </div>
+                </div>
+            </header>
+            <!-- header ends  -->   
+
     <center>
+        <main>
         <table height=635 width=1080>
-            <tr height=60>
+            
+            <tr height=70>
                 <td colspan="2"> 
                     <table width = "800">
-                    <tr>  
-                        <td align="right">
-                        <h2>Logged in as || <?php echo $user['name'] ?></h2> 
-                        </td>    
-                    </tr>    
+                   
+                    <tr>
+                        <td style="visibility:hidden;">
+                            hdhdhdhhfhhhhhhhhhhhhhhfhfjfjfjfh
+                        </td>
+                        
+                        <td align="center">
+                            <div class="card">
+                        <h2>Logged in as || <?php echo $user['name'] ?></h2>
+                            </div>  
+                        </td> 
+                        
+                          
+                    </tr>  
+                   
                     </table>
                 </td>
             </tr>
+            
             <tr>
-                <td  width="300">   
-                  <ul>                   
-                   <li> <a href="librarian_dashboard.php">Liabrarian Dashboard</a></li>										                  
+                <td rowspan="3" width="250">  
+                <nav> 
+                <ul>
+                    <li> <a href="librarian_dashboard.php">Liabrarian Dashboard</a></li>										                  
                     <li> <a href="profile.php">Profile</a></li>
                     <li> <a href="catalog.php">Catalogue</a></li> 
 					<li> <a href="search.php">Search</a></li> 
@@ -34,50 +72,59 @@ include_once("../controller/userData.php");
                     <li> <a href="account_setting.php">Account Settings</a></li>					  					
                     <li> <a href="../controller/logout.php">Logout</a></li>
                 </ul>
+                </nav>
                 </td>
-                <td>                    
-				<fieldset>
-                     <legend>EDIT PROFILE</legend>
-                     <table>
-                         <form action="../controller/editprofileCheck.php" method="POST" >                   
+                <td>
+                    <div class="add-book">                    
+				    
+                         <form action="../controller/editprofileCheck.php" method="POST" >
+                            <fieldset>
+
+                     <legend class="book-tag">EDIT PROFILE</legend>
+                     <table class="table-book" height="120">                   
                             <tr>
-                                <td>Id</td>
-                                <td>
-                                    :<input type="text" name="id" id=""><br>
+                                <td class="td-book">Id</td>
+                                <td class="td-book">
+                                    <input type="text" name="id" id=""><br>
                                 </td>
                             </tr>
                              <tr>
-                                    <td>Name</td>
-                                    <td>:<input type="text" name="name" value="" /><br /></td>
+                                    <td class="td-book">Name</td>
+                                    <td class="td-book"><input type="text" name="name" value="" /><br /></td>
                                     </tr>
                             <tr>
-                                <td>Email</td>
-                                <td>:<input type="email" name="email" value="" /><br /></td>
+                                <td class="td-book">Email</td>
+                                <td class="td-book"><input type="email" name="email" value="" /><br /></td>
                             </tr>  
                             <tr>
-                                <td>New Password</td>
-                                <td>
-                                    :<input type="password" name="password" id=""></br>
+                                <td class="td-book">New Password</td>
+                                <td class="td-book">
+                                    <input type="password" name="password" id=""></br>
                                 </td>
                             </tr>                      			
                             <tr>
-                                <td >
+                                <td class="td-book">
                                     <input type="submit" name="submit" value="submit" align="center">
                                 </td>
-                            </tr>                    
-                        </form>
-                    </table>
-                </fieldset>
+                            </tr> 
+                            </table><hr>                   
+                       
+                         </fieldset>
+                         </form>
+                         </div>                               
                 </td>
             </tr>
         </table>
-        <table>
-               <tr height=40>
-                <td align="center">Copyright © by Sabbir Hossain</td>
-            </tr>
-        </table>
+        </main>
+
+                <footer>
+                     <div class="row">
+                        <div class="col-lg-12">
+                            <p>Copyright © by Sabbir Hossain</p>
+                        </div>  
+                    </div>                              
+                </footer>
     </center>
+    </div>
     </body>
-
-
 </html>
