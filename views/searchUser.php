@@ -1,97 +1,33 @@
 <?php
 require_once('../models/userModel.php');
-$users = getAllUser();
+$viewbook = getviewbook();
 ?>
 
 
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Journal Catalog Database</title>
+    <title>Search Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style11.css">
+    <script src="../Assests/searchUser.js"></script>
 </head>
+
 <body>
-     <center>
-          <table>
-                       
-          <h2>Search Users</h2>
-           
-          <form method="post" action=""enctype="">
-          <input type="text" placeholder="Search" name="searchUser">
-          <input type="submit" name="submit">
-          <a href="searchUser.php">Show All</a>
-          </from> 
-          <?php
-            if(isset($_REQUEST['submit']))
-            { 
-            
-            $searchUser=$_REQUEST['searchUser']; ?>
-
-            <br><br>
-            
-            <table border="1" cellspacing="0" align="center" cellpadding="5">
-                            <tr>
-                                <td>Id</td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Gender</td>
-                                <td>Dob</td>
-                                <td>User type</td>
-                            </tr>
-                        
-          <?php
-            searchUser($searchUser);
-          ?>
-          </table>
-            <?php
-            }   
-            else
-            { ?>
-
-           
-            <br>
-            <br>
-            
-            <table border="1" cellspacing="0" align="center" cellpadding="5">
-                 <tr>
-                                <td>Id</td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Gender</td>
-                                <td>Dob</td>
-                                <td>User type</td>
-                            </tr>
-                        
-                
-                          <?php for($i=0; $i<count($users); $i++){
-                    ?>
-                                
-                      <tr>
-                                <td><?= $users[$i]['id'] ?></td>
-                                <td><?= $users[$i]['name'] ?></td>
-                                <td><?= $users[$i]['email'] ?></td>
-                                <td><?= $users[$i]['gender'] ?></td>
-                                <td><?= $users[$i]['dob'] ?></td>
-                                <td><?= $users[$i]['type'] ?></td>
-                            </tr>
-                                
-                    <?php 
-                                
-                        }
-                    ?>
-            </table>
-
-                     <?php  } ?>
-          </table>
-
-      
-              <br>
-
-                    <table>
-                         <button><a href="search.php"> Back </a></button>
-                    </table>
-
-    </center>             
-    
-  
+  <div class="container">
+    <h2>Search User</h2>
+    <div class="search-book">
+    <input type="text" id='term' name="term" value="" onkeyup="abc()" />
+    <input type="button" name="click" value="submit" onclick="searchUser()" />
+</div>
+    <div id="result"></div>
+</div>
 </body>
+
+
+
 </html>
