@@ -1,98 +1,30 @@
-<?php
-require_once('../models/userModel.php');
-$viewbook = getviewbook();
-?>
-
 
 <!DOCTYPE html>
-<html>
+<html lang="eng">
+
 <head>
-    <title>Book Catalog Database</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style11.css">
+    <script src="../Assests/searchBook.js"></script>
 </head>
+
 <body>
-     <center>
-         
-          <table>
-                <h2>Search Book</h2>
-           
-          <form method="post" action=""enctype="">
-          <input type="text" placeholder="Search" name="search">
-          <input type="submit" name="submit">
-          <a href="searchBook.php">Show All</a>
-          
-          </from> 
-          <?php
-            if(isset($_REQUEST['submit']))
-            { 
-            
-            $search=$_REQUEST['search']; ?>
-
-            <br><br>
-            
-            <table border="1" cellspacing="0" align="center" cellpadding="5">
-                <tr>
-                    <td>Book ID</td>
-                    <td>Book Name</td>
-                    <td>Author</td>
-                    <td>Catagory </td>
-                    
-
-                  </tr>
-          <?php
-            search($search);
-          ?>
-          </table>
-            <?php
-            }   
-            else
-            { ?>
-
-           
-            <br>
-            <br>
-            <table border="1" cellspacing="0" align="center" cellpadding="5">
-                <tr>
-                    <td>Book ID</td>
-                    <td>Book Name</td>
-                    <td>Author</td>
-                    <td>Catagory </td>
-                    
-
-                  </tr>
-                        
-                
-                          <?php for($i=0; $i<count($viewbook); $i++){
-                    ?>
-                                
-                        <tr>
-                                <td><?=$viewbook[$i]['Book_ID']?></td>
-                                <td><?=$viewbook[$i]['Book_Name']?></td>
-                                <td><?=$viewbook[$i]['Author']?></td>
-                                <td><?=$viewbook[$i]['Catagory']?></td>
-                                                
-                          </tr>    
-                                
-                    <?php 
-                                
-                        }
-                    ?>
-            </table>
-
-                     <?php  } ?>
-                     
-          </table>
-
-          <br>
-
-          <table>
-              <button><a href="search.php"> Back </a></button>
-          
-                      </table>
-       
-          
-            
-                      </center>             
-    
-  
+    <div class="container">
+        <h2>Search Book</h2>
+        <div class="search-book">
+            <input type="text" id="term" name="term" value="" onkeyup="abc()" />
+            <input type="button" name="click" value="Submit" onclick="search()" />
+        </div>
+        <div id="result"></div>
+    </div>
 </body>
+
 </html>
+
