@@ -1,54 +1,68 @@
+<?php
+include_once("../controller/registrationCheck.php")
+?>
+
 <html>
-
-<head>
-    <title>Home</title>
-</head>
-
-<style>
-    .img-library{
-        text-align: center;
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style1.css">
         
-    }
-
-    h2{
-        text-align: center;
-    }
-</style>
-
+    
+    </head>
+  
 <body>
-    <center>
-        <table height=635 width=1080>
-            <tr height=70>
-                <td>
-                    <table width="800">
-                        <tr>
+    <div class="container">
 
-                            <td align="right">
-                                <a href="home.php">Home</a> <a href="login.php">| Login</a> <a
-                                    href="registration.php">| Registration</a>
-                            </td>
-                        </tr>
-                    </table>
+            <!-- header starts  -->
+            <header>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">                   
+                    <div class="logo-div">
+                            <a href="#">
+                                <img class="nav-image" src="book.png"><!--logo add korar somoy logo ta ke hyper link er mnodde reke di bo  logo er class ta hobo ho fontweosome theke ni chi-->
+                            </a>
+                    </div>                 
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <nav>
+                            <ul>
+                                <li><a href="home.php">Home</a></li>
+                                <li><a href="LegalAgreement.php">Login</a></li>
+                                <li><a href="registration.php">Registration</a></li> 
+                                <li><a href="faq.php">Faq</a></li> 
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <h2><b>Welcome to Library Management System</b></h2>
-                </td>
-            </tr>
-            <tr class="img-library">
-                <td>
-                    <img src="../Assests/librarypic.jpg" alt="" height="400px" width="800px">
-                </td>
-            </tr>    
-        </table>
-        <table>
-               <tr height=40>
-                <td align="center">Copyright © by Sabbir Hossain 2025</td>
-            </tr>
-        </table>
-    </center>
-</body>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <!-- header ends  -->   
 
+        
+            <center>
+               
+                <main>
+                    <div class="library-heading">
+                <h2>library Management System</h2>
+                <div>
+                <div class="card">
+                    <img src="library.jpg">
+                </div>
+                </main>
+
+                <footer>
+                     <div class="row">
+                        <div class="col-lg-12">
+                            <p>Copyright © by Sabbir Hossain</p>
+                        </div>  
+                    </div>                              
+                </footer>
+            </center>
+    </div>
+</body>    
 </html>
