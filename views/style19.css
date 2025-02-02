@@ -1,0 +1,130 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.container {
+    width: 60%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.wrapper {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.wrapper:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.toggle,
+.content {
+    font-family: "Poppins", sans-serif;
+}
+
+.toggle {
+    width: 100%;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #111130;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.toggle:hover {
+    background-color: #e0e0e0;
+}
+
+.icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.wrapper.active .icon {
+    transform: rotate(45deg);
+}
+
+.content {
+    position: relative;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.wrapper.active .content {
+    height: auto;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+
+
+#faqs {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#faqs h2 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#faqs p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+#foots {
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#foots a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#foots a:hover {
+    text-decoration: underline;
+}
