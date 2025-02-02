@@ -105,4 +105,3 @@ $bok_id = $_POST['uname'];
 <?php
         }
           ?>
-        
