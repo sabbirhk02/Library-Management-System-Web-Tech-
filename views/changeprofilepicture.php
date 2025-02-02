@@ -1,86 +1,67 @@
 <?php
-include_once("../controller/view_userCheck.php");
+   session_start();
+   require_once('../models/db.php');
+  require_once('../models/userModel.php');
+  include_once("../controller/view_userCheck.php");
 include_once("../controller/userData.php");
 
-?>
+  if (isset($_POST['submit'])){
 
-<?php
-if(isset($_SESSION['flag'])){
-    $_SESSION['pp']="../Assests/profilepicture.png";
+    if($_FILES["image"]["error"] == 4){
+      echo
+      "<script> alert('Image Does Not Exist'); </script>"
+      ;
+    }
+    else{
+      $fileName = $_FILES["image"]["name"];
+      $fileSize = $_FILES["image"]["size"];
+      $tmpName = $_FILES["image"]["tmp_name"];
+  
+      $validImageExtension = ['jpg', 'jpeg', 'png'];
+      $imageExtension = explode('.', $fileName);
+      $imageExtension = strtolower(end($imageExtension));
+      if ( !in_array($imageExtension, $validImageExtension) ){
+        echo
+        "
+        <script>
+          alert('Invalid Image Extension');
+        </script>
+        ";
+      }
+      else if($fileSize > 1000000){
+        echo
+        "
+        <script>
+          alert('Image Size Is Too Large');
+        </script>
+        ";
+      }
+      else{
+        $Image = uniqid();
+        $Image .= '.' . $imageExtension;
+  
+        move_uploaded_file($tmpName, 'upload/' . $Image);
+        $userid=$user['id'];
+        $con = getConnection();
+       
+      $sql = "UPDATE `reg_info` SET `image`='$Image' WHERE `id`='$userid'";
+    $status = mysqli_query($con, $sql);
+ 
 }
-?>
-
-
-
-<?php 
-if(isset($_POST['submit']))
-{
+   
+       
+        if($status){
+           
+            header('location: ../views/profile.php');
+        }else{
+      echo "Error:";
+      }
     
-    $filename = $_FILES['file']['name'];
-    $tempname = $_FILES['file']['tmp_name'];
+
+    }
     
-    move_uploaded_file($tempname,$filename);
-    $_SESSION['pp']=$filename;
-
-}
-?>
-
-
-<html>
-<head>
-    <title>Change Profile Picture</title>
-</head>
-<body>
-    <center>
-        <table height=635 width=1080>
-            <tr height=60>
-                <td colspan="2"> 
-                    <table width = "800">
-                    <tr>  
-                        <td align="right">
-                        <h2>Logged in as || <?php echo $user['name'] ?></h2> 
-                        </td>    
-                    </tr>    
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td  width="300">   
-                <ul>                   
-                   <li> <a href="profile.php">Profile</a></li>
-					<li> <a href="librarian_dashboard.php">Liabrarian Dashboard</a></li>
-					<li> <a href="search.php">Search</a></li> 
-                    <li> <a href="account_setting.php">Account Settings</a></li>
-					<li> <a href="#">Event Management</a></li>  					
-                    <li> <a href="../controller/logout.php">Logout</a></li>
-                </ul>
-                </td>
-                <td>
-                <form action="" method="POST" enctype="multipart/form-data">
-                      <fieldset>
-                        <legend>PROFILE PICTURE</legend>
-                        <table>
-                           <img height="200" width="200" src="<?php echo $_SESSION['pp'];?>"> <br>
-                        <input type="file" name="file" value=""/> <br>
-                        <hr>
-                        <input type="submit" name="submit" value="Submit"/>
-                        </table>
-                        
-                            
-                      </fieldset>
-                </form>
-                </td>
-            </tr>
-        </table>
-        <table>
-               <tr height=40>
-                <td align="center">Copyright © by Sabbir Hossain</td>
-            </tr>
-        </table>
-    </center>
-    </body>
-</html>
-
-<?php
-
+ 
+  }  
+    
+  
 ?>
